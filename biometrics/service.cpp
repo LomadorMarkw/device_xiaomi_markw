@@ -42,7 +42,7 @@ static constexpr char kGoodixFpDev[] = "/dev/goodix_fp";
 int main() {
     char vend[PROPERTY_VALUE_MAX];
     property_get("ro.hardware.fingerprint", vend, "none");
-    
+
     if (!strcmp(vend, "none")) {
     	ALOGE("ro.hardware.fingerprint not set! Killing " LOG_TAG " binder service!");
         return 1;
@@ -55,11 +55,6 @@ int main() {
     android::sp<IBiometricsFingerprint> bio = BiometricsFingerprint::getInstance();
 
     if (is_goodix) {
-        if (access(kGoodixFpDev, F_OK) != 0) {
-            ALOGE("Cannot access %s (%s)", kGoodixFpDev, strerror(errno));
-            return 1;
-        }
-
         // the conventional HAL might start binder services
         android::ProcessState::initWithDriver("/dev/binder");
         android::ProcessState::self()->startThreadPool();
@@ -69,9 +64,8 @@ int main() {
     configureRpcThreadpool(1, true /* callerWillJoin */);
 
     if (bio != nullptr) {
-        android::status_t ret = bio->registerAsService();
-        if (ret != android::OK) {
-            ALOGE("Cannot register BiometricsFingerprint service: %d", ret);
+        if (::android::OK != bio->registerAsService()) {
+            return 1;
         }
     } else {
         ALOGE("Can't create instance of BiometricsFingerprint, nullptr");
