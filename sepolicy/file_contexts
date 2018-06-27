@@ -17,6 +17,11 @@
 /(vendor|system/vendor)/usr/idc(/.*)?                         u:object_r:idc_file:s0
 /(vendor|system/vendor)/usr/keylayout(/.*)?                   u:object_r:keylayout_file:s0
 
+# Lights
+/sys/class/leds(/.*)?						                u:object_r:sysfs_leds:s0
+/sys/devices/soc/78b6000\.i2c/i2c-2/2-[0-9a-f]+/leds(/.*)?	u:object_r:sysfs_leds:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.xiaomi_markw				u:object_r:hal_light_default_exec:s0
+
 # Location
 /data/vendor/location/xtra/socket_hal_xtra    u:object_r:location_socket:s0
 
