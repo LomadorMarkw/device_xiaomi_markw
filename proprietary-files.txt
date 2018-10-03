@@ -106,6 +106,7 @@ vendor/lib/libmmcamera_hdr_gb_lib.so
 vendor/lib/libmmcamera_imglib.so
 vendor/lib/libmmcamera_llvd.so
 vendor/lib/libmmcamera_optizoom_lib.so
+vendor/lib/libmmcamera_paaf_lib.so
 vendor/lib/libmmcamera_ppbase_module.so
 vendor/lib/libmmcamera_stillmore_lib.so
 vendor/lib/libmmcamera_thread_services.so
