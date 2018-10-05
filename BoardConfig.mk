@@ -44,7 +44,6 @@ BOARD_KERNEL_PAGESIZE :=  2048
 TARGET_KERNEL_VERSION := 3.18
 
 BOARD_KERNEL_CMDLINE := \
-    firmware_class.path=/vendor/firmware_mnt/image \
     androidboot.bootdevice=7824900.sdhci \
     earlycon=msm_hsl_uart,0x78af000 \
     androidboot.selinux=permissive \
