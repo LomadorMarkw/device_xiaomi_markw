@@ -112,8 +112,9 @@ WITH_DEXPREOPT := true
 endif
 
 # Display
-MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
+TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS :=  0x2000
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
+MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
 TARGET_USES_NEW_ION_API :=true
 TARGET_USES_GRALLOC1 := true
 TARGET_USES_OVERLAY := true
@@ -205,7 +206,6 @@ BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 TARGET_LD_SHIM_LIBS += \
     /vendor/bin/mm-qcamera-daemon|libshims_qcamera-daemon.so \
     /vendor/lib64/hw/gxfingerprint.default.so|fakelogprint.so:/vendor/lib64/hw/fingerprint.goodix.so|fakelogprint.so:/vendor/bin/gx_fpd|fakelogprint.so
-
 
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
