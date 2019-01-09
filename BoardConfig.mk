@@ -197,6 +197,7 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.recovery.qcom
 VENDOR_SECURITY_PATCH := 2019-08-01
 
 # SELinux
+BOARD_SEPOLICY_VERS := 28.0
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
@@ -204,6 +205,7 @@ BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 TARGET_LD_SHIM_LIBS += \
     /vendor/bin/mm-qcamera-daemon|libshims_qcamera-daemon.so \
     /vendor/lib64/hw/gxfingerprint.default.so|fakelogprint.so:/vendor/lib64/hw/fingerprint.goodix.so|fakelogprint.so:/vendor/bin/gx_fpd|fakelogprint.so
+
 
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
