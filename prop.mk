@@ -98,7 +98,6 @@ debug.sf.recomputecrop=0 \
 persist.hwc.enable_vds=1 \
 ro.vendor.display.cabl=2 \
 debug.enable.sglscale=1 \
-ro.sf.lcd_density=480 \
 debug.mdpcomp.logs=0 \
 ro.qualcomm.cabl=0 \
 debug.egl.hw=0 \
