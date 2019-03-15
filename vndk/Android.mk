@@ -28,12 +28,7 @@ VNDK_SP_LIBRARIES := \
     libz
 
 EXTRA_VENDOR_LIBRARIES := \
-    android.hidl.base@1.0 \
-    android.hidl.manager@1.0 \
-    vendor.display.color@1.0 \
-    vendor.display.config@1.0
-
-
+    android.hidl.base@1.0
 #-------------------------------------------------------------------------------
 # VNDK Modules
 #-------------------------------------------------------------------------------
