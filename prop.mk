@@ -83,6 +83,7 @@ persist.debug.wfd.enable=1 \
 ro.opengles.version=196610 \
 debug.sf.enable_hwc_vds=1 \
 dev.pm.dyn_samplingrate=1 \
+debug.cpurend.vsync=false \
 debug.sf.recomputecrop=0 \
 persist.hwc.enable_vds=1 \
 ro.vendor.display.cabl=2 \
