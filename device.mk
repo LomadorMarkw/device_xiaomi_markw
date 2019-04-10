@@ -20,6 +20,10 @@ $(call inherit-product, vendor/xiaomi/markw/markw-vendor.mk)
 # Product launched with M
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 
+# Enforce RRO for framework-res
+PRODUCT_ENFORCE_RRO_TARGETS := \
+    framework-res
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage \
