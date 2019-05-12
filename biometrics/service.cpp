@@ -55,6 +55,11 @@ int main() {
     android::sp<IBiometricsFingerprint> bio = BiometricsFingerprint::getInstance();
 
     if (is_goodix) {
+        if (access(kGoodixFpDev, F_OK) != 0) {
+            ALOGE("Cannot access %s (%s)", kGoodixFpDev, strerror(errno));
+            return 1;
+        }
+
         // the conventional HAL might start binder services
         android::ProcessState::initWithDriver("/dev/binder");
         android::ProcessState::self()->startThreadPool();
