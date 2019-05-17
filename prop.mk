@@ -186,6 +186,11 @@ persist.vendor.delta_time.enable=true
 PRODUCT_PROPERTY_OVERRIDES += \
 net.tcp.2g_init_rwnd=10
 
+# Touch optimize
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.vendor.qti.inputopts.enable=true \
+persist.vendor.qti.inputopts.movetouchslop=0.6
+
 # UI
 PRODUCT_PROPERTY_OVERRIDES += \
 sys.use_fifo_ui=1
