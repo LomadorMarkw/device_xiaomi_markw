@@ -179,7 +179,7 @@ DEVICE_PROVISIONED=1
 
 # Time Services
 PRODUCT_PROPERTY_OVERRIDES += \
-persist.timed.enable=true
+persist.vendor.delta_time.enable=true
 
 # TCP
 PRODUCT_PROPERTY_OVERRIDES += \
