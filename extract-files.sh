@@ -60,4 +60,8 @@ setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false "$CLEAN_VENDOR"
 
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 
+# Modified camera configs
+CAMERA2_SENSOR_MODULES="$LINEAGE_ROOT"/vendor/xiaomi/markw/proprietary/vendor/lib/libmmcamera2_sensor_modules.so
+sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "$CAMERA2_SENSOR_MODULES"
+
 "$MY_DIR"/setup-makefiles.sh
