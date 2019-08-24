@@ -405,6 +405,10 @@ on post-fs-data
     # Create dir for TUI
     mkdir /data/vendor/tui 0700 system system
 
+    #Libprocessgroup permissions
+    chown system system /acct/uid_*
+    chmod 0777 /acct/uid_*
+
     # Start move time data to /data/vendor once post-fs-data done
     start vendor.move_time_data
 
