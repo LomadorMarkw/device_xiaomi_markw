@@ -5,6 +5,7 @@ include $(CLEAR_VARS)
 
 ## Libs
 LOCAL_SHARED_LIBRARIES := \
+    libprocessgroup \
     libutils \
     libcutils \
     liblog
