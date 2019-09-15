@@ -1,13 +1,20 @@
 VNDK_SP_LIBRARIES := \
-    android.hardware.graphics.allocator@2.0 \
-    android.hardware.graphics.common@1.0 \
-    android.hardware.graphics.common@1.1 \
     android.hardware.graphics.mapper@2.0 \
     android.hardware.graphics.mapper@2.1 \
+    android.hardware.graphics.mapper@3.0 \
+    android.hardware.graphics.common@1.0 \
+    android.hardware.graphics.common@1.1 \
+    android.hardware.graphics.common@1.2 \
     android.hardware.renderscript@1.0 \
+    android.hidl.memory.token@1.0 \
+    android.hidl.safe_union@1.0 \
     android.hidl.memory@1.0 \
+    libbinderthreadstate \
+    libhwbinder_noltopgo \
+    libdexfile_support \
     libutilscallstack \
     libhidltransport \
+    libprocessgroup \
     libRS_internal \
     libcompiler_rt \
     libunwindstack \
@@ -18,7 +25,7 @@ VNDK_SP_LIBRARIES := \
     libhardware \
     libhidlbase \
     libhwbinder \
-    libdexfile \
+    libjsoncpp \
     libcutils \
     libbcinfo \
     libunwind \
@@ -28,7 +35,6 @@ VNDK_SP_LIBRARIES := \
     liblzma \
     libpng \
     libc++ \
-    libft2 \
     libion \
     libz
 
@@ -43,7 +49,7 @@ define define-vndk-lib
 include $$(CLEAR_VARS)
 LOCAL_MODULE := $1.$2
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PREBUILT_MODULE_FILE := $$(TARGET_OUT_INTERMEDIATE_LIBRARIES)/$1.so
+LOCAL_PREBUILT_MODULE_FILE := $$(call intermediates-dir-for,SHARED_LIBRARIES,$1)/$1.so
 LOCAL_STRIP_MODULE := false
 LOCAL_MULTILIB := first
 LOCAL_MODULE_TAGS := optional
@@ -58,7 +64,7 @@ ifneq ($$(TARGET_TRANSLATE_2ND_ARCH),true)
 include $$(CLEAR_VARS)
 LOCAL_MODULE := $1.$2
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PREBUILT_MODULE_FILE := $$($$(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_INTERMEDIATE_LIBRARIES)/$1.so
+LOCAL_PREBUILT_MODULE_FILE := $$(call intermediates-dir-for,SHARED_LIBRARIES,$1,,,$(TARGET_2ND_ARCH_VAR_PREFIX))/$1.so
 LOCAL_STRIP_MODULE := false
 LOCAL_MULTILIB := 32
 LOCAL_MODULE_TAGS := optional
@@ -72,7 +78,7 @@ endif  # TARGET_2ND_ARCH is not empty
 endef
 
 $(foreach lib,$(VNDK_SP_LIBRARIES),\
-    $(eval $(call define-vndk-lib,$(lib),vndk-sp-gen,vndk-sp-28,)))
+    $(eval $(call define-vndk-lib,$(lib),vndk-sp-gen,vndk-sp-29,)))
 $(foreach lib,$(VNDK_SP_EXT_LIBRARIES),\
     $(eval $(call define-vndk-lib,$(lib),vndk-sp-ext-gen,vndk-sp,true)))
 $(foreach lib,$(EXTRA_VENDOR_LIBRARIES),\
