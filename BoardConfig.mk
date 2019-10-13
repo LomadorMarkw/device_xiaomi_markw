@@ -189,7 +189,7 @@ VENDOR_SECURITY_PATCH := 2019-08-01
 
 # SELinux
 BOARD_SEPOLICY_VERS := 28.0
-include device/qcom/sepolicy/sepolicy.mk
+include device/qcom/sepolicy-legacy-um/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Shims
