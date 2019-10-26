@@ -319,10 +319,17 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.0 \
     android.hardware.radio.config@1.0 \
     android.hardware.secure_element@1.0 \
+    qti_telephony_hidl_wrapper.xml \
+    qti-telephony-hidl-wrapper \
+    qti_telephony_utils.xml \
+    ims-ext-common_system \
+    libprotobuf-cpp-full \
     libcnefeatureconfig \
+    qti-telephony-utils \
     telephony-ext \
     librmnetctl \
-    libxml2
+    libxml2 \
+    rild
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
