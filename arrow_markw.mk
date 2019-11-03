@@ -24,6 +24,9 @@ $(call inherit-product, device/xiaomi/markw/device.mk)
 # Inherit ArrowOS stuff
 $(call inherit-product, vendor/arrow/config/common.mk)
 
+# Bootanimation resolution
+TARGET_BOOT_ANIMATION_RES := 1080
+
 # Device identifier. This must come after all inclusions
 BOARD_VENDOR := Xiaomi
 TARGET_VENDOR := Xiaomi
