@@ -15,18 +15,13 @@
 #
 
 LOCAL_PATH := $(call my-dir)
-
-ifneq ($(filter markw mido tiffany tissot,$(TARGET_DEVICE)),)
-
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
-
 LOCAL_MODULE := wifi_symlinks
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := FAKE
 LOCAL_MODULE_SUFFIX := -timestamp
-
 include $(BUILD_SYSTEM)/base_rules.mk
 
 $(LOCAL_BUILT_MODULE): ACTUAL_INI_FILE := /data/vendor/wifi/WCNSS_qcom_cfg.ini
@@ -113,5 +108,3 @@ $(RFS_MSM_SLPI_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -sf /vendor/firmware $@/readonly/vendor/firmware
 
 ALL_DEFAULT_INSTALLED_MODULES += $(RFS_MSM_ADSP_SYMLINKS) $(RFS_MSM_MPSS_SYMLINKS) $(RFS_MSM_SLPI_SYMLINKS)
-
-endif
