@@ -207,6 +207,9 @@ TARGET_LD_SHIM_LIBS += \
     /vendor/bin/mm-qcamera-daemon|libshims_qcamera-daemon.so \
     /vendor/lib64/hw/gxfingerprint.default.so|fakelogprint.so:/vendor/lib64/hw/fingerprint.goodix.so|fakelogprint.so:/vendor/bin/gx_fpd|fakelogprint.so
 
+# Shipping API
+PRODUCT_SHIPPING_API_LEVEL := 23
+
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 PRODUCT_FULL_TREBLE_OVERRIDE := true
