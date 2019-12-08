@@ -33,36 +33,14 @@
 #include "property_service.h"
 #include "log.h"
 
-char const *heapgrowthlimit;
-char const *heapminfree;
-
 using android::init::property_set;
-
-void check_device()
-{
-    struct sysinfo sys;
-
-    sysinfo(&sys);
-
-    if (sys.totalram > 2048ull * 1024 * 1024) {
-        // from - Stock rom
-        heapgrowthlimit = "256m";
-        heapminfree = "4m";
-    } else {
-        // from - phone-xxhdpi-2048-dalvik-heap.mk
-        heapgrowthlimit = "192m";
-        heapminfree = "2m";
-   }
-}
 
 void vendor_load_properties()
 {
-    check_device();
-
-    property_set("dalvik.vm.heapstartsize", "16m");
-    property_set("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
+    property_set("dalvik.vm.heapstartsize", "8m");
+    property_set("dalvik.vm.heapgrowthlimit", "256m");
     property_set("dalvik.vm.heapsize", "512m");
     property_set("dalvik.vm.heaptargetutilization", "0.75");
-    property_set("dalvik.vm.heapminfree", heapminfree);
+    property_set("dalvik.vm.heapminfree", "512k");
     property_set("dalvik.vm.heapmaxfree", "8m");
 }
