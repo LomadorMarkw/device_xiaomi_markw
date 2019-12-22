@@ -17,8 +17,8 @@
 # Inherit proprietary files
 $(call inherit-product, vendor/xiaomi/markw/markw-vendor.mk)
 
-# Product launched with N
-$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n.mk)
+# Product launched with M
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
