@@ -1,30 +1,35 @@
 VNDK_SP_LIBRARIES := \
     android.hardware.graphics.allocator@2.0 \
     android.hardware.graphics.common@1.0 \
+    android.hardware.graphics.common@1.1 \
     android.hardware.graphics.mapper@2.0 \
+    android.hardware.graphics.mapper@2.1 \
     android.hardware.renderscript@1.0 \
     android.hidl.memory@1.0 \
+    libutilscallstack \
+    libhidltransport \
+    libRS_internal \
+    libcompiler_rt \
+    libunwindstack \
+    libhidlmemory \
+    libbacktrace \
     libRSCpuRef \
     libRSDriver \
-    libRS_internal \
-    libbacktrace \
-    libbase \
-    libbcinfo \
-    libblas \
-    libc++ \
-    libcompiler_rt \
-    libcutils \
-    libft2 \
     libhardware \
     libhidlbase \
-    libhidlmemory \
-    libhidltransport \
     libhwbinder \
-    libion \
-    liblzma \
-    libpng \
+    libdexfile \
+    libcutils \
+    libbcinfo \
     libunwind \
     libutils \
+    libbase \
+    libblas \
+    liblzma \
+    libpng \
+    libc++ \
+    libft2 \
+    libion \
     libz
 
 EXTRA_VENDOR_LIBRARIES := \
