@@ -192,7 +192,20 @@ sys.use_fifo_ui=1
 
 # USB
 PRODUCT_PROPERTY_OVERRIDES += \
-persist.vendor.usb.config.extra=none
+persist.vendor.usb.config.extra=none \
+persist.sys.usb.config=mtp,adb \
+persist.service.adb.enable=1 \
+persist.service.debuggable=1
+
+# USB ADB debug
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+persist.logd.logpersistd=logcatd \
+persist.sys.usb.config=mtp,adb \
+persist.service.adb.enable=1 \
+ro.logd.size.stats=16M \
+ro.adb.secure=0 \
+ro.debuggable=1 \
+ro.secure=0
 
 # Wi-Fi
 PRODUCT_PROPERTY_OVERRIDES += \
