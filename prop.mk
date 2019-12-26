@@ -70,6 +70,15 @@ persist.dpm.feature=1
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.debug.coresight.config=stm-events
 
+# Dalvik VM
+PRODUCT_PROPERTY_OVERRIDES += \
+dalvik.vm.heaptargetutilization=0.75 \
+dalvik.vm.heapgrowthlimit=288m \
+dalvik.vm.heapstartsize=8m \
+dalvik.vm.heapminfree=512k \
+dalvik.vm.heapmaxfree=8m \
+dalvik.vm.heapsize=768m
+
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
 vendor.display.enable_default_color_mode=1 \
