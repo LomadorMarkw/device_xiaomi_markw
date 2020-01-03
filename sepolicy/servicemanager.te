@@ -1,0 +1,2 @@
+allow servicemanager mm-qcamerad_exec:file { getattr };
+allow servicemanager mm-qcamerad:dir { search };

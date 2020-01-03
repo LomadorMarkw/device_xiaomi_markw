@@ -1,0 +1,2 @@
+allow netutils_wrapper mm-qcamerad_exec:file { getattr };
+allow netutils_wrapper vendor_file:file { getattr };

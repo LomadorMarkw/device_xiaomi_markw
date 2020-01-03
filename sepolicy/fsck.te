@@ -1,0 +1,2 @@
+allow fsck mm-qcamerad_exec:file { getattr };
+allow fsck vendor_file:file { getattr };
