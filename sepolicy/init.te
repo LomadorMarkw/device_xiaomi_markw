@@ -3,3 +3,4 @@ allow init proc_boot_reason:file r_file_perms;
 allow init sysfs:file { setattr };
 allow init tee_device:chr_file { write ioctl };
 allow init fpc_sysfs:file { write open };
+allow init vendor_file:file { execute };

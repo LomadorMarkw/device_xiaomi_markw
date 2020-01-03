@@ -3,6 +3,8 @@ typeattribute vendor_init data_between_core_and_vendor_violators;
 allow vendor_init rootfs:dir { write add_name };
 allow vendor_init device:file { create write };
 
+allow vendor_init tombstone_data_file:dir { setattr search };
+
 allow vendor_init {
   bluetooth_data_file
   camera_data_file

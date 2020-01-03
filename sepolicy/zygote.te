@@ -1,1 +1,2 @@
 allow zygote mm-qcamerad_exec:file { getattr };
+allow zygote vendor_file:file { getattr };
