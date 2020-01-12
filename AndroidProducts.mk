@@ -1,1 +1,1 @@
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/lineage_markw.mk
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/arrow_markw.mk
